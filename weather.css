@@ -15,13 +15,11 @@ body {
     min-height: 100vh;
     font-family: "Inter", sans-serif;
     color: var(--text);
-
     background:
         radial-gradient(circle at 20% 20%, #284b9b, transparent 35%),
         radial-gradient(circle at 80% 20%, #7b35a8, transparent 35%),
         radial-gradient(circle at 50% 90%, #123b5d, transparent 40%),
         #07111f;
-
     overflow-x: hidden;
 }
 
@@ -204,6 +202,7 @@ body {
 
 .search-box {
     flex: 1;
+    min-width: 0;
     height: 58px;
     display: flex;
     align-items: center;
@@ -229,6 +228,8 @@ body {
 
 .search-box input {
     flex: 1;
+    min-width: 0;
+    width: 100%;
     height: 100%;
     border: none;
     outline: none;
@@ -252,6 +253,8 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .search-box button:hover {
@@ -348,7 +351,6 @@ body {
 }
 
 @keyframes weatherFloat {
-
     0%,
     100% {
         transform: translateY(0);
@@ -562,7 +564,7 @@ body {
     text-align: center;
 }
 
-.forecast-card>span {
+.forecast-card > span {
     font-size: 11px;
     color: var(--muted);
     letter-spacing: 2px;
@@ -622,7 +624,6 @@ footer {
 }
 
 @media (max-width: 850px) {
-
     .weather-main {
         grid-template-columns: 1fr;
     }
@@ -641,7 +642,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-
     .dashboard {
         width: 94%;
         padding-top: 25px;
@@ -653,6 +653,22 @@ footer {
 
     .header-time {
         display: none;
+    }
+
+    .search-box {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .search-box input {
+        min-width: 0;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .search-box button {
+        flex-shrink: 0;
+        padding: 0 18px;
     }
 
     .current-weather {
@@ -711,4 +727,4 @@ footer {
     .sun-progress {
         display: none;
     }
-}
+        }
