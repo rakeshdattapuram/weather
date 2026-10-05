@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherly — Weather Dashboard</title>
+
+    <link rel="stylesheet" href="weather.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+    </div>
+
+    <div class="particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <main class="dashboard">
+
+        <header class="header">
+
+            <div class="logo">
+                <div class="logo-icon" id="logoIcon">☀</div>
+
+                <div>
+                    <h1>Weatherly</h1>
+                    <p>Weather at a glance</p>
+                </div>
+            </div>
+
+            <div class="header-time">
+                <span id="currentTime"></span>
+            </div>
+
+        </header>
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <span class="search-icon">⌕</span>
+
+                <input type="text" id="cityInput" placeholder="Search for a city...">
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+            <button class="location-btn" id="locationBtn">
+                📍 Use My Location
+            </button>
+
+        </section>
+
+        <section class="weather-main">
+
+            <div class="current-weather glass-card">
+
+                <div class="weather-top">
+
+                    <div>
+                        <p class="location-label">CURRENT WEATHER</p>
+
+                        <h2 id="cityName"></h2>
+
+                        <p class="date" id="currentDate"></p>
+                    </div>
+
+                    <div class="weather-icon" id="mainIcon"></div>
+
+                </div>
+
+                <div class="temperature-container">
+
+                    <span id="temperature"></span>
+
+                    <sup>°C</sup>
+
+                </div>
+
+                <p class="condition" id="condition"></p>
+
+                <div class="weather-summary">
+
+                    <div>
+                        <span>Feels like</span>
+                        <strong id="feelsLike"></strong>
+                    </div>
+
+                    <div>
+                        <span>Humidity</span>
+                        <strong id="humidity"></strong>
+                    </div>
+
+                    <div>
+                        <span>Wind</span>
+                        <strong id="wind"></strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="details-grid">
+
+                <div class="detail-card glass-card">
+
+                    <div class="detail-icon">🌡️</div>
+
+                    <div>
+                        <span>Feels Like</span>
+                        <h3 id="detailFeels"></h3>
+                    </div>
+
+                </div>
+
+                <div class="detail-card glass-card">
+
+                    <div class="detail-icon">💨</div>
+
+                    <div>
+                        <span>Wind Speed</span>
+                        <h3 id="detailWind"></h3>
+                    </div>
+
+                </div>
+
+                <div class="detail-card glass-card">
+
+                    <div class="detail-icon">💧</div>
+
+                    <div>
+                        <span>Humidity</span>
+                        <h3 id="detailHumidity"></h3>
+                    </div>
+
+                </div>
+
+                <div class="detail-card glass-card">
+
+                    <div class="detail-icon">🌡</div>
+
+                    <div>
+                        <span>Pressure</span>
+                        <h3 id="pressure"></h3>
+                    </div>
+
+                </div>
+
+                <div class="detail-card glass-card">
+
+                    <div class="detail-icon">👁</div>
+
+                    <div>
+                        <span>Visibility</span>
+                        <h3 id="visibility"></h3>
+                    </div>
+
+                </div>
+
+                <div class="detail-card glass-card">
+
+                    <div class="detail-icon">☀️</div>
+
+                    <div>
+                        <span>UV Index</span>
+                        <h3 id="uv">N/A</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="sun-section">
+
+            <div class="sun-card glass-card">
+
+                <div class="sun-info">
+                    <span>🌅 Sunrise</span>
+                    <strong id="sunrise"></strong>
+                </div>
+
+                <div class="sun-progress">
+                    <div class="sun"></div>
+                </div>
+
+                <div class="sun-info">
+                    <span>🌇 Sunset</span>
+                    <strong id="sunset"></strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="forecast-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>5 DAY FORECAST</span>
+                    <h2 id="cityInForecast"></h2>
+                </div>
+
+                <button class="unit-btn">
+                    °C
+                </button>
+
+            </div>
+
+            <div class="forecast-grid">
+
+                <div class="forecast-card glass-card">
+                    <span id="day1"></span>
+                    <div class="forecast-icon" id="icon1"></div>
+                    <h3 id="temp1"></h3>
+                    <p id="condition1"></p>
+                </div>
+
+                <div class="forecast-card glass-card">
+                    <span id="day2"></span>
+                    <div class="forecast-icon" id="icon2"></div>
+                    <h3 id="temp2"></h3>
+                    <p id="condition2"></p>
+                </div>
+
+                <div class="forecast-card glass-card">
+                    <span id="day3"></span>
+                    <div class="forecast-icon" id="icon3"></div>
+                    <h3 id="temp3"></h3>
+                    <p id="condition3"></p>
+                </div>
+
+                <div class="forecast-card glass-card">
+                    <span id="day4"></span>
+                    <div class="forecast-icon" id="icon4"></div>
+                    <h3 id="temp4"></h3>
+                    <p id="condition4"></p>
+                </div>
+
+                <div class="forecast-card glass-card">
+                    <span id="day5"></span>
+                    <div class="forecast-icon" id="icon5"></div>
+                    <h3 id="temp5"></h3>
+                    <p id="condition5"></p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="history-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>RECENT</span>
+                    <h2>Search History</h2>
+                </div>
+
+                <button id="clearHistory">
+                    Clear
+                </button>
+
+            </div>
+
+            <div class="history-list" id="historyList"></div>
+
+        </section>
+
+        <footer>
+            <p>• Built with HTML, CSS & JavaScript</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
